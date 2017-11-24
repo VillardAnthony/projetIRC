@@ -6,7 +6,7 @@
 package client;
 import java.io.IOException;
 import java.net.UnknownHostException;
-/** 
+/**
 * starts a client. Reads the address and port from the command line
 argument
 * @author Remi Watrigant

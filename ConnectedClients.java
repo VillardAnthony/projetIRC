@@ -20,6 +20,10 @@ public class ConnectedClients implements Runnable {
     //Constructeur par défaut
 	public ConnectedClients(Server serv,Socket sock) throws IOException {
 
+                this.server = new Server();
+                this.server = serv;
+                this.socket = new Socket();
+                this.socket = sock;
                 this.id=idCounter++;
 		in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		out = new PrintWriter(socket.getOutputStream());

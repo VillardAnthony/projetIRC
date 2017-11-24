@@ -17,6 +17,12 @@ public class Server {
     private int port;
     private List<ConnectedClients> clients;
     
+     public Server() throws IOException{
+        //this.port = 2005;
+        this.clients = new ArrayList<ConnectedClients>();
+        Thread threadConnection = new Thread(new Connection(this));
+        threadConnection.start();
+    }
     public Server(int a) throws IOException{
         this.port = a;
         this.clients = new ArrayList<ConnectedClients>();
@@ -50,6 +56,9 @@ public class Server {
     
     public int getPort(){
         return port;
+    }
+    public void setPort(int a) {
+        this.port=a;
     }
 }
 

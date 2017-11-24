@@ -20,6 +20,7 @@ public class Connection implements Runnable{
     private ServerSocket serverSocket;
     
     public Connection(Server a) throws IOException{
+       // this.server= new Server();
         this.server=a;
         this.serverSocket = new ServerSocket(server.getPort());
     }

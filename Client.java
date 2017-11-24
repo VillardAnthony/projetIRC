@@ -24,9 +24,11 @@ public class Client {
                 this.socket = new Socket (address, port);
                 this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		this.out = new PrintWriter(socket.getOutputStream());
-                Thread threadClientSend = new Thread((Runnable) out);
-                //threadClientSend.start();
-                Thread threadClientReceive = new Thread((Runnable) in);
+                Thread threadClientSend = new Thread(new ClientSend(out));
+                threadClientSend.start();
+                Thread threadClientReceive = new Thread(new ClientReceive(this,in));
+                threadClientReceive.start();
+                
 	}
 	
 	public void disconnectedServer() throws IOException{
