@@ -11,16 +11,15 @@ public class ClientReceive implements Runnable{
 	private BufferedReader in; //va permettre d'envoyer des messages au client
 	
 	public ClientReceive(Client c,BufferedReader i){
-		//Son constructeur initialise ces deux attributs grâces aux paramètres reçus.
-                this.client=c;
-                this.in=i;
+        //Son constructeur initialise ces deux attributs grâces aux paramètres reçus.
+            this.client=c;
+            this.in=i;
 	}
-	 @Override
-                public void run() {
-                
-                 boolean isActive = true ;
-                 while(isActive) {
-                     try{
+	@Override
+        public void run() {           
+            boolean isActive = true ;
+                while(isActive) {
+                    try{
                       String message = in.readLine();
                        if (message != null) {
                          System.out.println("\nMessage reçu : " + message);
@@ -33,10 +32,9 @@ public class ClientReceive implements Runnable{
                       }
                  }                  
                  try {   
-                client.disconnectedServer();
-            } catch (IOException ex) {
-                Logger.getLogger(ClientReceive.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                }
-	
+                    client.disconnectedServer();
+                 } catch (IOException ex) {
+                      Logger.getLogger(ClientReceive.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+        }	
 }

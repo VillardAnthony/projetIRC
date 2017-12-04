@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package IHM;
 
 import javafx.event.ActionEvent;
@@ -14,10 +9,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-/**
- *
- * @author p1614217
- */
 public class ClientPanel extends Parent {
     private TextArea textToSend;// Zone de texte permettant de saisir du texte
     private ScrollPane scrollReceivedText;//Zone de texte affichant les messages reçus
