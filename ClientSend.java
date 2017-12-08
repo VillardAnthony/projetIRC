@@ -14,7 +14,7 @@ public class ClientSend implements Runnable{
         public void run() {
             Scanner sc = new Scanner(System.in);
             while (true) {
-                System.out.print("Votre message >> ");
+                System.out.print("Votre message >> "); //modifà faire : pseudo à afficher
                 String m = sc.nextLine();
                 out.println(m);
                 out.flush();
